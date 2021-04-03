@@ -1,0 +1,34 @@
+ .ForMember(dest => dest.FollowerFollowerAferNavigations,act => act.MapFrom( src => src.FollowMe))
+
+_houseMapper.MapToDto(houseEntity)
+
+
+ IHouseMapper houseMapper
+ private readonly IMapper _mapper;
+  _mapper = mapper;
+
+
+                .Select(p => new UserDTO()
+                 {
+                    Fname = p.Fname,
+                    Lname = p.Lname,
+                    FollowMe =  new FollowDTO { UserId = p.FollowerFollowerAferNavigations.Select(x=> x.UserId).t,}
+                })
+
+
+            options.UseLazyLoadingProxies()
+
+
+ControllersWithViews
+
+                .Include(pikadon => pikadon.Pikadons)
+                .Include(follower => follower.FollowerUsers)
+                .Include(myfollower => myfollower.FollowerFollowerAferNavigations)
+                .FirstOrDefaultAsync(i => i.UserId == id);
+
+
+Include(blog => blog.FollowerFollowerAferNavigations)
+.Include(blog => blog.FollowerUsers)
+
+	dotnet ef dbcontext scaffold "Server=XXXXX\SQLEXPRESS;Database=Bank;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -d --force
+https://dotnettutorials.net/lesson/automapper-in-c-sharp/
